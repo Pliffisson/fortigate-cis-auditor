@@ -1,0 +1,43 @@
+# Configuração local e credenciais
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/
+.vscode/
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# Configurações de equipamentos e dados gerados
+*.conf
+!tests/fixtures/sample.conf
+*.cfg
+reports/
+uploads/
+logs/
+backups*/
+*.log
+*.sqlite*
+*.db
+
+# Documentos de referência fornecidos separadamente
+*.pdf
+
+# Ambiente e caches Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Arquivos temporários
+*.tmp
+*.swp
+.DS_Store

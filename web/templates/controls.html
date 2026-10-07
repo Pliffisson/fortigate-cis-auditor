@@ -1,0 +1,47 @@
+{% from 'macros/status.html' import status_badge %}
+<section class="section controls-panel" id="{{ panel_id }}" data-controls-panel>
+    <div class="section-title"><h3><span class="screen-only">{{ heading }}</span><span class="print-only">{{ heading if failures else 'Pendências e erros para revisão' }}</span></h3><span class="screen-only">{{ results | length }} {{ 'falhas' if failures else 'controles no benchmark' }}</span></div>
+    <div class="controls-toolbar">
+        <label class="control-search">Buscar controle<input type="search" data-search placeholder="ID, nome ou configuração" autocomplete="off"></label>
+        <label>Nível<select data-level><option value="">Todos</option><option value="1">Nível 1</option><option value="2">Nível 2</option></select></label>
+        <label>Categoria<select data-category><option value="">Todas</option>{% for category in results | map(attribute='category') | unique | sort %}<option value="{{ category }}">{{ category }}</option>{% endfor %}</select></label>
+        {% if not failures %}<label>Status<select data-status><option value="">Todos</option><option value="PASS">Aprovado</option><option value="FAIL">Falha</option><option value="MANUAL_REVIEW">Revisão manual</option><option value="NOT_APPLICABLE">Não aplicável</option><option value="ERROR">Erro</option></select></label>{% endif %}
+        <label>Ordenar por<select data-sort><option value="cis">ID CIS</option><option value="level">Nível</option><option value="severity">Severidade (maior primeiro)</option></select></label>
+        <button type="button" class="secondary-button" data-clear-filters>Limpar filtros</button>
+    </div>
+    <p class="filter-count" data-filter-count role="status">{{ results | length }} de {{ results | length }} controles exibidos</p>
+    <div class="table-wrap"><table class="controls-table">
+        <thead><tr><th scope="col">CIS</th><th scope="col">Controle</th><th scope="col">Nível</th><th scope="col">Severidade</th><th scope="col">{{ 'Configuração encontrada' if failures else 'Status' }}</th><th scope="col">{{ 'Como corrigir' if failures else 'Valor' }}</th></tr></thead>
+        <tbody>{% for res in results %}
+        <tr data-control-row data-rule-id="{{ res.rule_id }}" data-severity="{{ res.severity.value }}" data-level="{{ res.level.value }}" data-category="{{ res.category }}" data-status="{{ res.status }}" data-search-text="{{ (res.rule_id ~ ' ' ~ res.title ~ ' ' ~ res.actual_value ~ ' ' ~ res.category) | lower }}">
+            <td class="rule" data-label="CIS">{{ res.rule_id }}</td>
+            <td data-label="Controle"><span class="control-name">{{ res.title }}</span>
+                <details class="control-details"><summary>Detalhes do controle</summary><dl>
+                    <dt>Critério esperado</dt><dd>{{ res.expected_value }}</dd>
+                    <dt>Evidência encontrada</dt><dd>{{ res.actual_value }}</dd>
+                    <dt>Orientação</dt><dd>{{ res.remediation }}</dd>
+                    <dt>Referência CIS</dt><dd>{{ res.references | join('; ') }}</dd>
+                    <dt>Tipo de avaliação</dt><dd>{{ res.assessment }}</dd>
+                    {% if res.controls_safeguards %}<dt>CIS Controls v8.1.2 — relações propostas</dt><dd>{% for safeguard in res.controls_safeguards %}<p><a href="#controls-alignment">{{ safeguard.safeguard_id }}</a> · {{ safeguard.implementation_groups | join(' / ') }} · Guia p. {{ safeguard.source_page }}<br>{{ safeguard.title }}<br>Evidência adicional: {{ safeguard.additional_evidence }}</p>{% endfor %}</dd>{% endif %}
+                    <dt>Status</dt><dd>{{ status_badge(res.status) }}</dd>
+                </dl></details>
+            </td>
+            <td data-label="Nível"><span class="badge badge-level">L{{ res.level.value }}</span></td>
+            <td data-label="Severidade"><span class="badge badge-{{ res.severity.value | lower }}">{{ res.severity.value }}</span></td>
+            {% if failures %}
+            <td class="actual" data-label="Configuração encontrada">{{ res.actual_value }}</td>
+            <td data-label="Como corrigir"><p class="remediation-guidance">{{ res.remediation }}</p>
+                {% if res.remediation_cli %}
+                <details class="cli-details"><summary>Ver comandos CLI</summary><pre class="remediation-cli"><code>{{ res.remediation_cli }}</code></pre>
+                    <button type="button" class="secondary-button copy-cli">Copiar comandos</button><span class="copy-status" role="status"></span>
+                </details><small class="remediation-note">Revise os comandos e substitua os parâmetros &lt;...&gt; antes de aplicar.</small>
+                {% else %}<small class="remediation-note">Consulte o procedimento do controle para os parâmetros do ambiente.</small>{% endif %}
+            </td>
+            {% else %}
+            <td data-label="Status">{{ status_badge(res.status) }}</td>
+            <td class="actual" data-label="Valor">{{ res.actual_value }}<br><small>{{ res.assessment }} · {{ res.references | join('; ') }}</small></td>
+            {% endif %}
+        </tr>{% endfor %}</tbody>
+    </table></div>
+    <p class="filter-empty" data-filter-empty hidden>Nenhum controle corresponde aos filtros. Ajuste a busca ou limpe os filtros.</p>
+</section>

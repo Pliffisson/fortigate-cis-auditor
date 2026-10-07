@@ -1,0 +1,514 @@
+[
+  {
+    "rule_id": "1.1",
+    "title": "Ensure DNS server is configured",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 17,
+    "pdf_page": 18
+  },
+  {
+    "rule_id": "1.2",
+    "title": "Ensure intra-zone traffic is not always allowed",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 19,
+    "pdf_page": 20
+  },
+  {
+    "rule_id": "1.3",
+    "title": "Disable all management related services on WAN port",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 21,
+    "pdf_page": 22
+  },
+  {
+    "rule_id": "2.1.1",
+    "title": "Ensure 'Pre-Login Banner' is set",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 25,
+    "pdf_page": 26
+  },
+  {
+    "rule_id": "2.1.2",
+    "title": "Ensure 'Post-Login-Banner' is set",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 27,
+    "pdf_page": 28
+  },
+  {
+    "rule_id": "2.1.3",
+    "title": "Ensure timezone is properly configured",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 29,
+    "pdf_page": 30
+  },
+  {
+    "rule_id": "2.1.4",
+    "title": "Ensure correct system time is configured through NTP",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 31,
+    "pdf_page": 32
+  },
+  {
+    "rule_id": "2.1.5",
+    "title": "Ensure hostname is set",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 34,
+    "pdf_page": 35
+  },
+  {
+    "rule_id": "2.1.6",
+    "title": "Ensure the latest firmware is installed",
+    "assessment": "Manual",
+    "level": 2,
+    "source_page": 36,
+    "pdf_page": 37
+  },
+  {
+    "rule_id": "2.1.7",
+    "title": "Disable USB Firmware and configuration installation",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 39,
+    "pdf_page": 40
+  },
+  {
+    "rule_id": "2.1.8",
+    "title": "Disable static keys for TLS",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 41,
+    "pdf_page": 42
+  },
+  {
+    "rule_id": "2.1.9",
+    "title": "Enable Global Strong Encryption",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 43,
+    "pdf_page": 44
+  },
+  {
+    "rule_id": "2.1.10",
+    "title": "Ensure management GUI listens on secure TLS version",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 44,
+    "pdf_page": 45
+  },
+  {
+    "rule_id": "2.1.11",
+    "title": "Ensure CDN is enabled for improved GUI performance",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 46,
+    "pdf_page": 47
+  },
+  {
+    "rule_id": "2.1.12",
+    "title": "Ensure single CPU core overloaded event is logged",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 47,
+    "pdf_page": 48
+  },
+  {
+    "rule_id": "2.1.13",
+    "title": "Ensure Hostname is Not Displayed On Login GUI",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 49,
+    "pdf_page": 50
+  },
+  {
+    "rule_id": "2.2.1",
+    "title": "Ensure 'Password Policy' is enabled",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 51,
+    "pdf_page": 52
+  },
+  {
+    "rule_id": "2.2.2",
+    "title": "Ensure administrator password retries and lockout time are configured",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 54,
+    "pdf_page": 55
+  },
+  {
+    "rule_id": "2.3.1",
+    "title": "Ensure only SNMPv3 is enabled",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 57,
+    "pdf_page": 58
+  },
+  {
+    "rule_id": "2.3.2",
+    "title": "Allow only trusted hosts in SNMPv3",
+    "assessment": "Manual",
+    "level": 2,
+    "source_page": 61,
+    "pdf_page": 62
+  },
+  {
+    "rule_id": "2.3.3",
+    "title": "Disable SNMPv3 Query Per User",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 63,
+    "pdf_page": 64
+  },
+  {
+    "rule_id": "2.3.4",
+    "title": "Enabling SNMP trap for memory usage",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 65,
+    "pdf_page": 66
+  },
+  {
+    "rule_id": "2.4.1",
+    "title": "Remove default admin user and create one with other name",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 68,
+    "pdf_page": 69
+  },
+  {
+    "rule_id": "2.4.2",
+    "title": "Ensure all the login accounts having specific trusted hosts enabled",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 71,
+    "pdf_page": 72
+  },
+  {
+    "rule_id": "2.4.3",
+    "title": "Ensure admin accounts with different privileges have their correct profiles assigned",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 74,
+    "pdf_page": 75
+  },
+  {
+    "rule_id": "2.4.4",
+    "title": "Ensure Admin idle timeout time is configured",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 77,
+    "pdf_page": 78
+  },
+  {
+    "rule_id": "2.4.5",
+    "title": "Ensure only encrypted access channels are enabled",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 79,
+    "pdf_page": 80
+  },
+  {
+    "rule_id": "2.4.6",
+    "title": "Apply Local-in Policies",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 81,
+    "pdf_page": 82
+  },
+  {
+    "rule_id": "2.4.7",
+    "title": "Ensure default Admin ports are changed",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 84,
+    "pdf_page": 85
+  },
+  {
+    "rule_id": "2.4.8",
+    "title": "Virtual patching on the local-in management interface",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 86,
+    "pdf_page": 87
+  },
+  {
+    "rule_id": "2.5.1",
+    "title": "Ensure High Availability configuration is enabled",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 89,
+    "pdf_page": 90
+  },
+  {
+    "rule_id": "2.5.2",
+    "title": "Ensure \"Monitor Interfaces\" for High Availability devices is enabled",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 92,
+    "pdf_page": 93
+  },
+  {
+    "rule_id": "2.5.3",
+    "title": "Ensure HA Reserved Management Interface is configured",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 94,
+    "pdf_page": 95
+  },
+  {
+    "rule_id": "2.5.4",
+    "title": "Ensure High Availability Group-ID is configured",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 96,
+    "pdf_page": 97
+  },
+  {
+    "rule_id": "3.1",
+    "title": "Ensure that unused policies are reviewed regularly",
+    "assessment": "Manual",
+    "level": 2,
+    "source_page": 99,
+    "pdf_page": 100
+  },
+  {
+    "rule_id": "3.2",
+    "title": "Ensure that policies do not use \"ALL\" as Service",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 101,
+    "pdf_page": 102
+  },
+  {
+    "rule_id": "3.3",
+    "title": "Ensure firewall policy denying all traffic to/from Tor, malicious server, or scanner IP addresses using ISDB",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 103,
+    "pdf_page": 104
+  },
+  {
+    "rule_id": "3.4",
+    "title": "Ensure logging is enabled on all firewall policies",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 105,
+    "pdf_page": 106
+  },
+  {
+    "rule_id": "4.1.1",
+    "title": "Detect Botnet connections",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 109,
+    "pdf_page": 110
+  },
+  {
+    "rule_id": "4.1.2",
+    "title": "Apply IPS Security Profile to Policies",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 111,
+    "pdf_page": 112
+  },
+  {
+    "rule_id": "4.2.1",
+    "title": "Ensure Antivirus Definition Push Updates are Configured",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 113,
+    "pdf_page": 114
+  },
+  {
+    "rule_id": "4.2.2",
+    "title": "Apply Antivirus Security Profile to Policies",
+    "assessment": "Manual",
+    "level": 2,
+    "source_page": 115,
+    "pdf_page": 116
+  },
+  {
+    "rule_id": "4.2.3",
+    "title": "Enable Outbreak Prevention Database",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 116,
+    "pdf_page": 117
+  },
+  {
+    "rule_id": "4.2.4",
+    "title": "Enable AI /heuristic based malware detection",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 118,
+    "pdf_page": 119
+  },
+  {
+    "rule_id": "4.2.5",
+    "title": "Enable grayware detection on antivirus",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 120,
+    "pdf_page": 121
+  },
+  {
+    "rule_id": "4.2.6",
+    "title": "Ensure inline scanning with FortiGuard AI-Based Sandbox Service is enabled",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 122,
+    "pdf_page": 123
+  },
+  {
+    "rule_id": "4.2.7",
+    "title": "Enable CDR for proxy mode on XLSB, OpenOffice, and RTF files",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 125,
+    "pdf_page": 126
+  },
+  {
+    "rule_id": "4.3.1",
+    "title": "Enable Botnet C&C Domain Blocking DNS Filter",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 128,
+    "pdf_page": 129
+  },
+  {
+    "rule_id": "4.3.2",
+    "title": "Ensure DNS Filter logs all DNS queries and responses",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 130,
+    "pdf_page": 131
+  },
+  {
+    "rule_id": "4.3.3",
+    "title": "Apply DNS Filter Security Profile to Policies",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 132,
+    "pdf_page": 133
+  },
+  {
+    "rule_id": "4.4.1",
+    "title": "Create a Web Filtering Profile",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 134,
+    "pdf_page": 135
+  },
+  {
+    "rule_id": "4.5.1",
+    "title": "Block high risk categories on Application Control",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 137,
+    "pdf_page": 138
+  },
+  {
+    "rule_id": "4.5.2",
+    "title": "Block applications running on non-default ports",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 139,
+    "pdf_page": 140
+  },
+  {
+    "rule_id": "4.5.3",
+    "title": "Ensure all Application Control related traffic is logged",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 141,
+    "pdf_page": 142
+  },
+  {
+    "rule_id": "4.5.4",
+    "title": "Apply Application Control Security Profile to Policies",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 143,
+    "pdf_page": 144
+  },
+  {
+    "rule_id": "5.1.1",
+    "title": "Enable Compromised Host Quarantine",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 147,
+    "pdf_page": 148
+  },
+  {
+    "rule_id": "5.2.1.1",
+    "title": "Ensure Security Fabric is Configured",
+    "assessment": "Manual",
+    "level": 2,
+    "source_page": 152,
+    "pdf_page": 153
+  },
+  {
+    "rule_id": "6.1.1",
+    "title": "Apply a Trusted Signed Certificate for VPN Portal",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 156,
+    "pdf_page": 157
+  },
+  {
+    "rule_id": "6.1.2",
+    "title": "Enable Limited TLS Versions for SSL VPN",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 158,
+    "pdf_page": 159
+  },
+  {
+    "rule_id": "7.1.1",
+    "title": "Enable Event Logging",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 162,
+    "pdf_page": 163
+  },
+  {
+    "rule_id": "7.2.1",
+    "title": "Centralized Logging and Reporting",
+    "assessment": "Automated",
+    "level": 2,
+    "source_page": 165,
+    "pdf_page": 166
+  },
+  {
+    "rule_id": "7.3.1",
+    "title": "Encrypt Log Transmission to FortiAnalyzer / FortiManager",
+    "assessment": "Automated",
+    "level": 1,
+    "source_page": 168,
+    "pdf_page": 169
+  },
+  {
+    "rule_id": "7.3.2",
+    "title": "Encrypt Log Transmission to Syslog",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 170,
+    "pdf_page": 171
+  },
+  {
+    "rule_id": "7.3.3",
+    "title": "Encrypt Log Transmission to Syslog",
+    "assessment": "Manual",
+    "level": 1,
+    "source_page": 172,
+    "pdf_page": 173
+  }
+]

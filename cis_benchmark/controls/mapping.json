@@ -1,0 +1,24 @@
+{
+  "framework_version": "8.1.2",
+  "benchmark": "CIS FortiGate 7.4.x v1.0.1",
+  "origin": "project_analysis",
+  "review_status": "candidate",
+  "mappings": [
+    {"safeguard_id": "4.2", "rule_ids": ["2.4.5", "3.1"], "rationale": "Os testes ajudam a identificar desvios da configuração segura de rede; não comprovam o processo documentado.", "additional_evidence": "Procedimento aprovado, responsável, baseline e revisão anual ou após mudanças significativas."},
+    {"safeguard_id": "4.6", "rule_ids": ["2.4.5", "2.1.10"], "rationale": "Protocolos e TLS da administração fornecem evidência parcial de acesso seguro ao equipamento.", "additional_evidence": "Processo de administração segura e cobertura dos demais ativos e softwares."},
+    {"safeguard_id": "4.7", "rule_ids": ["2.4.1"], "rationale": "A remoção da conta padrão contribui para o tratamento das contas fornecidas pelo fabricante.", "additional_evidence": "Inventário e tratamento de contas padrão em todos os ativos aplicáveis."},
+    {"safeguard_id": "4.9", "rule_ids": ["1.1"], "rationale": "A configuração identifica servidores DNS; sua presença não comprova que sejam confiáveis.", "additional_evidence": "Lista de DNS autorizados e confirmação de uso efetivo na infraestrutura."},
+    {"safeguard_id": "8.2", "rule_ids": ["3.4", "7.1.1"], "rationale": "As configurações indicam geração de logs no firewall.", "additional_evidence": "Eventos efetivamente coletados e cobertura dos ativos definidos no processo de logging."},
+    {"safeguard_id": "8.4", "rule_ids": ["2.1.4"], "rationale": "NTP configurado fornece indicação de sincronização, sem provar seu funcionamento.", "additional_evidence": "Pelo menos duas fontes sincronizadas, quando suportado, e diagnóstico operacional dos ativos."},
+    {"safeguard_id": "8.5", "rule_ids": ["3.4", "7.1.1"], "rationale": "Logging de políticas e eventos pode contribuir para logs detalhados.", "additional_evidence": "Amostras com origem, data, usuário, horário e endereços; cobertura dos ativos com dados sensíveis."},
+    {"safeguard_id": "8.6", "rule_ids": ["4.3.2"], "rationale": "O perfil DNS pode indicar logging de consultas.", "additional_evidence": "Eventos DNS reais e confirmação de cobertura nas políticas e ativos pertinentes."},
+    {"safeguard_id": "8.9", "rule_ids": ["7.2.1", "7.3.1"], "rationale": "Destinos remotos configurados contribuem para a centralização dos logs.", "additional_evidence": "Recebimento centralizado, cobertura, retenção e processo documentado."},
+    {"safeguard_id": "12.1", "rule_ids": ["2.1.6"], "rationale": "A versão identificada no equipamento ajuda na revisão de suporte, sem comprovar que esteja atualizada.", "additional_evidence": "Verificação mensal ou mais frequente do suporte do firmware e revisão de avisos do fabricante."},
+    {"safeguard_id": "12.2", "rule_ids": ["1.2", "3.1", "3.2", "2.5.1"], "rationale": "Zonas, políticas e HA oferecem evidências parciais de segmentação, privilégio mínimo e disponibilidade.", "additional_evidence": "Arquitetura aprovada, fluxos autorizados, necessidades de negócio e testes de disponibilidade."},
+    {"safeguard_id": "12.3", "rule_ids": ["2.4.5", "2.1.10"], "rationale": "Protocolos seguros de administração contribuem para a gestão da infraestrutura de rede.", "additional_evidence": "Processo de gestão segura e evidências da infraestrutura além do FortiGate."},
+    {"safeguard_id": "13.4", "rule_ids": ["1.2", "3.1", "3.2"], "rationale": "Zonas e políticas oferecem evidência parcial da filtragem entre segmentos.", "additional_evidence": "Diagrama, matriz de comunicação e validação dos fluxos autorizados e bloqueados."},
+    {"safeguard_id": "13.6", "rule_ids": ["3.4"], "rationale": "Logging de sessões do firewall pode fornecer registros de tráfego da rede.", "additional_evidence": "Registros reais de tráfego, cobertura dos dispositivos, revisão e alertas operacionais."},
+    {"safeguard_id": "13.8", "rule_ids": ["4.1.2"], "rationale": "Perfis IPS aplicados podem contribuir para prevenção de intrusões de rede.", "additional_evidence": "Cobertura, funcionamento, licenciamento e validação da prevenção de intrusões."},
+    {"safeguard_id": "13.10", "rule_ids": ["4.5.4"], "rationale": "Application Control aplicado oferece evidência parcial de filtragem na camada de aplicação.", "additional_evidence": "Cobertura das políticas, configuração dos perfis e testes do bloqueio efetivo."}
+  ]
+}

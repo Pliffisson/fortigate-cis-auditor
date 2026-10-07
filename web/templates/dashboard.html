@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FortiGate CIS Auditor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('controls_alignment_asset', filename='controls-alignment.css') }}">
+    <link rel="preload" href="{{ url_for('static', filename='fonts/JetBrainsMono-Regular.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{ url_for('static', filename='theme.css') }}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="brand"><div id="default-brand-icon" class="brand-icon" aria-hidden="true">🛡️</div><img id="company-logo" class="company-logo" alt="Logo da empresa" hidden><div>FortiGate CIS Auditor<small>Avaliação de segurança da configuração</small></div></div>
+    <details class="branding-menu">
+        <summary>Logo<span class="branding-label"> da empresa</span></summary>
+        <div class="branding-options">
+            <label for="logo-file">Selecionar ou trocar a logo</label>
+            <input id="logo-file" type="file" accept="image/png,image/jpeg,image/webp">
+            <p>PNG, JPG ou WebP · Até 2 MB.<br>Salva apenas neste navegador.</p>
+            <button id="remove-logo" class="secondary-button" type="button" hidden>Remover logo</button>
+            <p id="logo-status" role="status" aria-live="polite" hidden></p>
+        </div>
+    </details>
+</nav>
+<main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}
+    {% endwith %}
+    {% if error %}
+    <div class="upload-error" role="alert" aria-live="assertive">
+        <strong>{{ error_title or 'Não foi possível analisar o arquivo.' }}</strong><p>{{ error }}</p><p>{{ error_hint or 'Confira o arquivo e envie novamente.' }}</p>
+    </div>
+    {% endif %}
+    {% if audit.report %}
+        {% include 'assessment.html' %}
+        <details class="new-audit"><summary>Analisar outro arquivo</summary>{% include 'upload.html' %}</details>
+    {% else %}
+        {% include 'upload.html' %}
+    {% endif %}
+</main>
+<script src="{{ url_for('static', filename='branding.js') }}" defer></script>
+<script src="{{ url_for('controls_alignment_asset', filename='controls-alignment.js') }}" defer></script>
+<script src="{{ url_for('static', filename='dashboard.js') }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{% set r = audit.report %}
+{% from 'macros/assessment.html' import compliance_value, coverage_status %}
+{% if r.parse_warnings %}
+<div class="upload-error" role="alert"><strong>Exportação incompleta ou com comandos não interpretados.</strong><p>Exporte novamente com show full-configuration para concluir a avaliação.</p><ul>{% for warning in r.parse_warnings %}<li>{{ warning }}</li>{% endfor %}</ul></div>
+{% endif %}
+
+<nav class="assessment-nav" aria-label="Seções da auditoria">
+    <a href="#assessment-summary" aria-current="location">Resumo</a>
+    {% if r.failed_results %}<a href="#failures">Falhas</a>{% endif %}
+    <a href="#all-controls">Todos os controles</a>
+    {% if r.controls_alignment %}<a href="#controls-alignment">CIS Controls</a>{% endif %}
+</nav>
+
+<section id="assessment-summary" class="audit-summary" aria-label="Resumo da avaliação" data-view-key="{{ audit.view_id | default('') }}">
+    <div class="assessment-header">
+        <div class="audit-summary-heading"><strong>{{ r.benchmark }}</strong><span>FortiOS {{ r.fortios_version }}</span></div>
+        <div class="assessment-actions">
+            <button type="button" class="secondary-button" data-print-summary>Imprimir resumo</button>
+            <details class="export-menu"><summary>Exportar relatório</summary><div class="export-options">
+                <a href="{{ url_for('download_report', format_type='html') }}">HTML</a>
+                <a href="{{ url_for('download_report', format_type='json') }}">JSON</a>
+                <a href="{{ url_for('download_report', format_type='pdf') }}">PDF</a>
+                <a href="{{ url_for('download_report', format_type='remediation') }}">Remediação CLI</a>
+            </div></details>
+            <form action="{{ url_for('delete_audit') }}" method="post"><input type="hidden" name="csrf_token" value="{{ session.get('csrf_token', '') }}"><button class="secondary-button delete-button" type="submit">Excluir minha auditoria</button></form>
+        </div>
+    </div>
+    <div class="audit-summary-description audit-source">
+        <span class="audit-file">Arquivo: <strong>{{ audit.config_file | default('Configuração enviada', true) }}</strong></span>
+        <span>Analisado em: <time>{{ audit.timestamp | default('') }}</time></span>
+    </div>
+    <div class="result-highlights">
+        <div class="card primary-score"><div class="label">Conformidade parcial</div>
+            {{ compliance_value(r.overall_percentage, r.evaluated_rules) }}
+            <p class="detail">{{ r.passed_rules }}/{{ r.evaluated_rules }} controles avaliados aprovados</p>
+            <p class="indicator-description">Percentual de aprovação entre os controles com conclusão PASS ou FAIL.</p>
+        </div>
+        <div class="card primary-coverage"><dl><dt class="label">Cobertura</dt><dd class="value coverage-value">{{ r.coverage_percentage }}%</dd></dl>
+            <p class="detail coverage-status">{{ coverage_status(r) }}</p>
+            <p class="detail">{{ r.evaluated_rules }} de {{ r.total_rules }} controles avaliados · {{ r.not_applicable_rules }} não aplicáveis</p>
+            <p class="indicator-description">Extensão da avaliação dos controles aplicáveis; não mede a conformidade.</p>
+        </div>
+    </div>
+    <dl class="audit-summary-metrics">
+        <div><dt>Revisão manual</dt><dd><a class="metric-link" href="#all-controls" data-status-shortcut="MANUAL_REVIEW">{{ r.manual_review_rules }} <span>Ver controles</span></a></dd></div>
+        <div><dt>Não aplicáveis</dt><dd><a class="metric-link" href="#all-controls" data-status-shortcut="NOT_APPLICABLE">{{ r.not_applicable_rules }} <span>Ver controles</span></a></dd></div>
+        <div><dt>Erros</dt><dd><a class="metric-link" href="#all-controls" data-status-shortcut="ERROR">{{ r.error_rules }} <span>Ver controles</span></a></dd></div>
+    </dl>
+    <details class="methodology"><summary>Como interpretar os resultados e as cores</summary>
+        <p class="audit-summary-note">Avaliação offline baseada na configuração. Não equivale a uma certificação CIS ou à execução do CIS-CAT. A conformidade considera apenas PASS e FAIL; os pesos de severidade são definidos pelo projeto.</p>
+        <div class="compliance-legend" aria-label="Escala de conformidade definida pelo projeto"><strong>Escala do projeto — limites configurados no código, não definidos pelo CIS:</strong><ul>
+            <li class="green">Alta: ≥ 80%</li><li class="yellow">Moderada: ≥ 60% e &lt; 80%</li><li class="orange">Baixa: ≥ 40% e &lt; 60%</li><li class="red">Muito baixa: &lt; 40%</li>
+        </ul><p>A cobertura mostra a extensão da avaliação; não mede a conformidade.</p></div>
+    </details>
+</section>
+
+<div class="stats stats-secondary">
+    <div class="card"><div class="label">Nível 1</div>{{ compliance_value(r.level1_percentage, r.level1_evaluated) }}<div class="detail">{{ r.level1_passed }}/{{ r.level1_evaluated }} avaliados aprovados</div></div>
+    <div class="card"><div class="label">Nível 2</div>{{ compliance_value(r.level2_percentage, r.level2_evaluated) }}<div class="detail">{{ r.level2_passed }}/{{ r.level2_evaluated }} avaliados aprovados</div></div>
+    <a class="card metric-link" href="#all-controls" data-status-shortcut="FAIL"><div class="label">Falhas</div><div class="value red">{{ r.failed_rules }}</div><div class="detail">Ver controles que precisam de correção →</div></a>
+</div>
+
+{% if r.failed_results %}
+{% with panel_id='failures', results=r.failed_results, failures=true, heading='Controles que precisam de correção' %}{% include 'controls.html' %}{% endwith %}
+{% endif %}
+{% with panel_id='all-controls', results=r.results, failures=false, heading='Todos os controles' %}{% include 'controls.html' %}{% endwith %}
+{% with alignment=r.controls_alignment %}{% include 'controls_alignment.html' %}{% endwith %}

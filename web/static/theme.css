@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Bold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 700 900;
+    font-display: swap;
+}
+:root {
+    --bg: #101412;
+    --panel: #191f1c;
+    --panel2: #222b25;
+    --border: #354139;
+    --text: #eef4ed;
+    --muted: #adbbae;
+    --accent: #b8e986;
+    --accent-dark: #83c75a;
+    --blue: #b8e986;
+    --purple: #a3ce80;
+    --interface-font: 'JetBrains Mono', monospace;
+}
+body, button, input, select, textarea, code, pre,
+.rule, .actual, .status-pill, .remediation-cli, .export-guide-body pre,
+.privacy-note code { font-family: var(--interface-font); font-variant-ligatures: none; }
+body { line-height: 1.65; }
+button, input, select, textarea { font-size: inherit; }
+.brand { font-weight: 700; }
+.initial-hero h2 { letter-spacing: -1px; font-weight: 700; }
+.initial-hero p { max-width: 950px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media screen {
+    body { background: radial-gradient(ellipse at 20% 0%, #28372766, transparent 50%), var(--bg); }
+    .navbar { background: #101412ee; }
+    .brand-icon { background: linear-gradient(135deg, #47683a, #293e28); border: 1px solid #688e53; }
+    .upload, .audit-summary, .card, .section { background: var(--panel); border-color: var(--border); }
+    .initial-upload { box-shadow: 0 18px 60px #0002; }
+    .drop { border-color: #607553; background: #141b16; }
+    .drop:hover, .drop:focus-within { border-color: var(--accent); background: #1f2b20; }
+    .drop strong, .initial-hero h2 { color: #f0f7e9; }
+    .analyze { background: linear-gradient(135deg, #b8e986, #83c75a); color: #142012; font-weight: 700; box-shadow: 0 4px 18px #83c75a22; }
+    .analyze:hover { background: #c7f49b; box-shadow: 0 6px 24px #83c75a33; }
+    .export-guide, .branding-options, .selected-file, .assessment-nav,
+    .export-options, .timezone-field input, .level-field select,
+    .controls-toolbar input, .controls-toolbar select, .control-details dl,
+    .alignment-groups > div, .safeguard-card, .alignment-toolbar input,
+    .alignment-toolbar select { background: #141a16; border-color: var(--border); }
+    .branding-menu > summary, .secondary-button, .export-menu > summary { background: #202922; border-color: #475742; color: #d5e4cc; }
+    .secondary-button:hover, .branding-menu > summary:hover, .export-menu > summary:hover { background: #2a362a; border-color: #7fa565; }
+    .control-details[open], .cli-details[open] { background: #202a22; }
+    .export-guide-body pre, .remediation-cli { background: #101612; border-color: #3a5035; color: #c0e4a4; }
+    .assessment-nav a[aria-current] { background: #b8e986; color: #152010; }
+    .assessment-nav a:hover { background: #2a3827; color: #edf7e6; }
+    .assessment-nav a[aria-current]:hover { background: #c7f49b; color: #152010; }
+    .controls-table th { background: #141a16; color: #b7c7af; }
+    .controls-table tbody tr:hover td { background: #b8e98608; }
+    .initial-hero p, .file-help, .privacy-compact, .privacy-compact span,
+    .advanced-options summary span, .export-guide > summary span,
+    .export-guide-note, .branding-options p, .selected-file span,
+    .audit-summary-description, .audit-summary-note { color: var(--muted); }
+    .drop span, .export-guide-body, .advanced-options summary, .export-guide > summary { color: #c2cfbc; }
+    .rule, .control-details summary, .control-details a, .metric-link,
+    .coverage-value, .copy-status, .alignment-source a,
+    .alignment-groups strong, .alignment-details > summary,
+    .safeguard-card h4 span { color: var(--accent); }
+    .export-guide-note, .safeguard-evidence { border-left-color: var(--accent-dark); }
+    .badge-level { color: #c7e5ac; background: #30402a; }
+    .safeguard-card p, .alignment-groups span { color: #c7d2c1; }
+    .safeguard-card .safeguard-meta, .alignment-source { color: var(--muted); }
+    .safeguard-card .safeguard-pending { color: #fcd34d; }
+}
+@media screen and (max-width: 700px) {
+    .brand { font-size: 12px; min-width: 0; }
+    .brand > div:last-child { min-width: 0; }
+    .brand small { font-size: 8px; white-space: normal; }
+    .branding-menu { font-size: 11px; }
+    .initial-hero h2 { letter-spacing: -.6px; }
+    .assessment-nav a { font-size: 11px; }
+}

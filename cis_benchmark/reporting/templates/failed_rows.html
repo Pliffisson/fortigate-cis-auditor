@@ -1,0 +1,9 @@
+{% for r in report.failed_results %}
+<tr class="severity-{{ r.severity.value.lower() }}">
+    <td><span class="rule-id">{{ r.rule_id }}</span></td><td>{{ r.title }}</td>
+    <td><span class="badge badge-level">L{{ r.level.value }}</span></td>
+    <td><span class="badge badge-{{ r.severity.value.lower() }}">{{ r.severity.value }}</span></td>
+    <td class="actual-value">{{ r.actual_value }}</td><td class="expected-value">{{ r.expected_value }}</td>
+    <td class="remediation">{{ r.remediation }}{% if r.remediation_cli %}<pre class="cli-preview"><code>{{ r.remediation_cli }}</code></pre>{% endif %}</td>
+</tr>
+{% endfor %}

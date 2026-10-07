@@ -1,0 +1,2032 @@
+{
+  "framework": "CIS Controls",
+  "version": "8.1.2",
+  "source_document": "CIS_Controls_Guide_v8.1.2_0325_v2.pdf",
+  "source_sha256": "e21b6d20098f3b0ed6391f95ac8f60fb7958a4b74389f96b456b37cd6ac878e4",
+  "source_url": "https://www.cisecurity.org/controls/",
+  "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode",
+  "safeguards": [
+    {
+      "id": "1.1",
+      "control_id": "1",
+      "title": "Establish and Maintain Detailed Enterprise Asset Inventory",
+      "asset_type": "Devices",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 16,
+      "pdf_page": 22
+    },
+    {
+      "id": "1.2",
+      "control_id": "1",
+      "title": "Address Unauthorized Assets",
+      "asset_type": "Devices",
+      "security_function": "Respond",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 16,
+      "pdf_page": 22
+    },
+    {
+      "id": "1.3",
+      "control_id": "1",
+      "title": "Utilize an Active Discovery Tool",
+      "asset_type": "Devices",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 16,
+      "pdf_page": 22
+    },
+    {
+      "id": "1.4",
+      "control_id": "1",
+      "title": "Use Dynamic Host Configuration Protocol (DHCP) Logging to Update Enterprise Asset Inventory",
+      "asset_type": "Devices",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 17,
+      "pdf_page": 23
+    },
+    {
+      "id": "1.5",
+      "control_id": "1",
+      "title": "Use a Passive Asset Discovery Tool",
+      "asset_type": "Devices",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 17,
+      "pdf_page": 23
+    },
+    {
+      "id": "2.1",
+      "control_id": "2",
+      "title": "Establish and Maintain a Software Inventory",
+      "asset_type": "Software",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 20,
+      "pdf_page": 26
+    },
+    {
+      "id": "2.2",
+      "control_id": "2",
+      "title": "Ensure Authorized Software is Currently Supported",
+      "asset_type": "Software",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 20,
+      "pdf_page": 26
+    },
+    {
+      "id": "2.3",
+      "control_id": "2",
+      "title": "Address Unauthorized Software",
+      "asset_type": "Software",
+      "security_function": "Respond",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 20,
+      "pdf_page": 26
+    },
+    {
+      "id": "2.4",
+      "control_id": "2",
+      "title": "Utilize Automated Software Inventory Tools",
+      "asset_type": "Software",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 20,
+      "pdf_page": 26
+    },
+    {
+      "id": "2.5",
+      "control_id": "2",
+      "title": "Allowlist Authorized Software",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 21,
+      "pdf_page": 27
+    },
+    {
+      "id": "2.6",
+      "control_id": "2",
+      "title": "Allowlist Authorized Libraries",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 21,
+      "pdf_page": 27
+    },
+    {
+      "id": "2.7",
+      "control_id": "2",
+      "title": "Allowlist Authorized Scripts",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 21,
+      "pdf_page": 27
+    },
+    {
+      "id": "3.1",
+      "control_id": "3",
+      "title": "Establish and Maintain a Data Management Process",
+      "asset_type": "Data",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 24,
+      "pdf_page": 30
+    },
+    {
+      "id": "3.2",
+      "control_id": "3",
+      "title": "Establish and Maintain a Data Inventory",
+      "asset_type": "Data",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 24,
+      "pdf_page": 30
+    },
+    {
+      "id": "3.3",
+      "control_id": "3",
+      "title": "Configure Data Access Control Lists",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 24,
+      "pdf_page": 30
+    },
+    {
+      "id": "3.4",
+      "control_id": "3",
+      "title": "Enforce Data Retention",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 24,
+      "pdf_page": 30
+    },
+    {
+      "id": "3.5",
+      "control_id": "3",
+      "title": "Securely Dispose of Data",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 24,
+      "pdf_page": 30
+    },
+    {
+      "id": "3.6",
+      "control_id": "3",
+      "title": "Encrypt Data on End-User Devices",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 25,
+      "pdf_page": 31
+    },
+    {
+      "id": "3.7",
+      "control_id": "3",
+      "title": "Establish and Maintain a Data Classification Scheme",
+      "asset_type": "Data",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 25,
+      "pdf_page": 31
+    },
+    {
+      "id": "3.8",
+      "control_id": "3",
+      "title": "Document Data Flows",
+      "asset_type": "Data",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 25,
+      "pdf_page": 31
+    },
+    {
+      "id": "3.9",
+      "control_id": "3",
+      "title": "Encrypt Data on Removable Media",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 25,
+      "pdf_page": 31
+    },
+    {
+      "id": "3.10",
+      "control_id": "3",
+      "title": "Encrypt Sensitive Data in Transit",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 25,
+      "pdf_page": 31
+    },
+    {
+      "id": "3.11",
+      "control_id": "3",
+      "title": "Encrypt Sensitive Data at Rest",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 26,
+      "pdf_page": 32
+    },
+    {
+      "id": "3.12",
+      "control_id": "3",
+      "title": "Segment Data Processing and Storage Based on Sensitivity",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 26,
+      "pdf_page": 32
+    },
+    {
+      "id": "3.13",
+      "control_id": "3",
+      "title": "Deploy a Data Loss Prevention Solution",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 26,
+      "pdf_page": 32
+    },
+    {
+      "id": "3.14",
+      "control_id": "3",
+      "title": "Log Sensitive Data Access",
+      "asset_type": "Data",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 26,
+      "pdf_page": 32
+    },
+    {
+      "id": "4.1",
+      "control_id": "4",
+      "title": "Establish and Maintain a Secure Configuration Process",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 29,
+      "pdf_page": 35
+    },
+    {
+      "id": "4.2",
+      "control_id": "4",
+      "title": "Establish and Maintain a Secure Configuration Process for Network Infrastructure",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 29,
+      "pdf_page": 35
+    },
+    {
+      "id": "4.3",
+      "control_id": "4",
+      "title": "Configure Automatic Session Locking on Enterprise Assets",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 29,
+      "pdf_page": 35
+    },
+    {
+      "id": "4.4",
+      "control_id": "4",
+      "title": "Implement and Manage a Firewall on Servers",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 30,
+      "pdf_page": 36
+    },
+    {
+      "id": "4.5",
+      "control_id": "4",
+      "title": "Implement and Manage a Firewall on End-User Devices",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 30,
+      "pdf_page": 36
+    },
+    {
+      "id": "4.6",
+      "control_id": "4",
+      "title": "Securely Manage Enterprise Assets and Software",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 30,
+      "pdf_page": 36
+    },
+    {
+      "id": "4.7",
+      "control_id": "4",
+      "title": "Manage Default Accounts on Enterprise Assets and Software",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 30,
+      "pdf_page": 36
+    },
+    {
+      "id": "4.8",
+      "control_id": "4",
+      "title": "Uninstall or Disable Unnecessary Services on Enterprise Assets and Software",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 30,
+      "pdf_page": 36
+    },
+    {
+      "id": "4.9",
+      "control_id": "4",
+      "title": "Configure Trusted DNS Servers on Enterprise Assets",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 31,
+      "pdf_page": 37
+    },
+    {
+      "id": "4.10",
+      "control_id": "4",
+      "title": "Enforce Automatic Device Lockout on Portable End-User Devices",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 31,
+      "pdf_page": 37
+    },
+    {
+      "id": "4.11",
+      "control_id": "4",
+      "title": "Enforce Remote Wipe Capability on Portable End-User Devices",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 31,
+      "pdf_page": 37
+    },
+    {
+      "id": "4.12",
+      "control_id": "4",
+      "title": "Separate Enterprise Workspaces on Mobile End-User Devices",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 31,
+      "pdf_page": 37
+    },
+    {
+      "id": "5.1",
+      "control_id": "5",
+      "title": "Establish and Maintain an Inventory of Accounts",
+      "asset_type": "Users",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 33,
+      "pdf_page": 39
+    },
+    {
+      "id": "5.2",
+      "control_id": "5",
+      "title": "Use Unique Passwords",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 33,
+      "pdf_page": 39
+    },
+    {
+      "id": "5.3",
+      "control_id": "5",
+      "title": "Disable Dormant Accounts",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 34,
+      "pdf_page": 40
+    },
+    {
+      "id": "5.4",
+      "control_id": "5",
+      "title": "Restrict Administrator Privileges to Dedicated Administrator Accounts",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 34,
+      "pdf_page": 40
+    },
+    {
+      "id": "5.5",
+      "control_id": "5",
+      "title": "Establish and Maintain an Inventory of Service Accounts",
+      "asset_type": "Users",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 34,
+      "pdf_page": 40
+    },
+    {
+      "id": "5.6",
+      "control_id": "5",
+      "title": "Centralize Account Management",
+      "asset_type": "Users",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 34,
+      "pdf_page": 40
+    },
+    {
+      "id": "6.1",
+      "control_id": "6",
+      "title": "Establish an Access Granting Process",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 37,
+      "pdf_page": 43
+    },
+    {
+      "id": "6.2",
+      "control_id": "6",
+      "title": "Establish an Access Revoking Process",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 37,
+      "pdf_page": 43
+    },
+    {
+      "id": "6.3",
+      "control_id": "6",
+      "title": "Require MFA for Externally-Exposed Applications",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 37,
+      "pdf_page": 43
+    },
+    {
+      "id": "6.4",
+      "control_id": "6",
+      "title": "Require MFA for Remote Network Access",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 37,
+      "pdf_page": 43
+    },
+    {
+      "id": "6.5",
+      "control_id": "6",
+      "title": "Require MFA for Administrative Access",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 37,
+      "pdf_page": 43
+    },
+    {
+      "id": "6.6",
+      "control_id": "6",
+      "title": "Establish and Maintain an Inventory of Authentication and Authorization Systems",
+      "asset_type": "Software",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 38,
+      "pdf_page": 44
+    },
+    {
+      "id": "6.7",
+      "control_id": "6",
+      "title": "Centralize Access Control",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 38,
+      "pdf_page": 44
+    },
+    {
+      "id": "6.8",
+      "control_id": "6",
+      "title": "Define and Maintain Role-Based Access Control",
+      "asset_type": "Users",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 38,
+      "pdf_page": 44
+    },
+    {
+      "id": "7.1",
+      "control_id": "7",
+      "title": "Establish and Maintain a Vulnerability Management Process",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 41,
+      "pdf_page": 47
+    },
+    {
+      "id": "7.2",
+      "control_id": "7",
+      "title": "Establish and Maintain a Remediation Process",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 41,
+      "pdf_page": 47
+    },
+    {
+      "id": "7.3",
+      "control_id": "7",
+      "title": "Perform Automated Operating System Patch Management",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 41,
+      "pdf_page": 47
+    },
+    {
+      "id": "7.4",
+      "control_id": "7",
+      "title": "Perform Automated Application Patch Management",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 42,
+      "pdf_page": 48
+    },
+    {
+      "id": "7.5",
+      "control_id": "7",
+      "title": "Perform Automated Vulnerability Scans of Internal Enterprise Assets",
+      "asset_type": "Software",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 42,
+      "pdf_page": 48
+    },
+    {
+      "id": "7.6",
+      "control_id": "7",
+      "title": "Perform Automated Vulnerability Scans of Externally-Exposed Enterprise Assets",
+      "asset_type": "Software",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 42,
+      "pdf_page": 48
+    },
+    {
+      "id": "7.7",
+      "control_id": "7",
+      "title": "Remediate Detected Vulnerabilities",
+      "asset_type": "Software",
+      "security_function": "Respond",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 42,
+      "pdf_page": 48
+    },
+    {
+      "id": "8.1",
+      "control_id": "8",
+      "title": "Establish and Maintain an Audit Log Management Process",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 44,
+      "pdf_page": 50
+    },
+    {
+      "id": "8.2",
+      "control_id": "8",
+      "title": "Collect Audit Logs",
+      "asset_type": "Data",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 44,
+      "pdf_page": 50
+    },
+    {
+      "id": "8.3",
+      "control_id": "8",
+      "title": "Ensure Adequate Audit Log Storage",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 44,
+      "pdf_page": 50
+    },
+    {
+      "id": "8.4",
+      "control_id": "8",
+      "title": "Standardize Time Synchronization",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 44,
+      "pdf_page": 50
+    },
+    {
+      "id": "8.5",
+      "control_id": "8",
+      "title": "Collect Detailed Audit Logs",
+      "asset_type": "Data",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 45,
+      "pdf_page": 51
+    },
+    {
+      "id": "8.6",
+      "control_id": "8",
+      "title": "Collect DNS Query Audit Logs",
+      "asset_type": "Data",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 45,
+      "pdf_page": 51
+    },
+    {
+      "id": "8.7",
+      "control_id": "8",
+      "title": "Collect URL Request Audit Logs",
+      "asset_type": "Data",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 45,
+      "pdf_page": 51
+    },
+    {
+      "id": "8.8",
+      "control_id": "8",
+      "title": "Collect Command-Line Audit Logs",
+      "asset_type": "Data",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 45,
+      "pdf_page": 51
+    },
+    {
+      "id": "8.9",
+      "control_id": "8",
+      "title": "Centralize Audit Logs",
+      "asset_type": "Data",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 45,
+      "pdf_page": 51
+    },
+    {
+      "id": "8.10",
+      "control_id": "8",
+      "title": "Retain Audit Logs",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 45,
+      "pdf_page": 51
+    },
+    {
+      "id": "8.11",
+      "control_id": "8",
+      "title": "Conduct Audit Log Reviews",
+      "asset_type": "Data",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 46,
+      "pdf_page": 52
+    },
+    {
+      "id": "8.12",
+      "control_id": "8",
+      "title": "Collect Service Provider Logs",
+      "asset_type": "Data",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 46,
+      "pdf_page": 52
+    },
+    {
+      "id": "9.1",
+      "control_id": "9",
+      "title": "Ensure Use of Only Fully Supported Browsers and Email Clients",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 49,
+      "pdf_page": 55
+    },
+    {
+      "id": "9.2",
+      "control_id": "9",
+      "title": "Use DNS Filtering Services",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 49,
+      "pdf_page": 55
+    },
+    {
+      "id": "9.3",
+      "control_id": "9",
+      "title": "Maintain and Enforce Network-Based URL Filters",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 49,
+      "pdf_page": 55
+    },
+    {
+      "id": "9.4",
+      "control_id": "9",
+      "title": "Restrict Unnecessary or Unauthorized Browser and Email Client Extensions",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 49,
+      "pdf_page": 55
+    },
+    {
+      "id": "9.5",
+      "control_id": "9",
+      "title": "Implement DMARC",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 49,
+      "pdf_page": 55
+    },
+    {
+      "id": "9.6",
+      "control_id": "9",
+      "title": "Block Unnecessary File Types",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 50,
+      "pdf_page": 56
+    },
+    {
+      "id": "9.7",
+      "control_id": "9",
+      "title": "Deploy and Maintain Email Server Anti-Malware Protections",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 50,
+      "pdf_page": 56
+    },
+    {
+      "id": "10.1",
+      "control_id": "10",
+      "title": "Deploy and Maintain Anti-Malware Software",
+      "asset_type": "Devices",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 52,
+      "pdf_page": 58
+    },
+    {
+      "id": "10.2",
+      "control_id": "10",
+      "title": "Configure Automatic Anti-Malware Signature Updates",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 52,
+      "pdf_page": 58
+    },
+    {
+      "id": "10.3",
+      "control_id": "10",
+      "title": "Disable Autorun and Autoplay for Removable Media",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 52,
+      "pdf_page": 58
+    },
+    {
+      "id": "10.4",
+      "control_id": "10",
+      "title": "Configure Automatic Anti-Malware Scanning of Removable Media",
+      "asset_type": "Devices",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 52,
+      "pdf_page": 58
+    },
+    {
+      "id": "10.5",
+      "control_id": "10",
+      "title": "Enable Anti-Exploitation Features",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 53,
+      "pdf_page": 59
+    },
+    {
+      "id": "10.6",
+      "control_id": "10",
+      "title": "Centrally Manage Anti-Malware Software",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 53,
+      "pdf_page": 59
+    },
+    {
+      "id": "10.7",
+      "control_id": "10",
+      "title": "Use Behavior-Based Anti-Malware Software",
+      "asset_type": "Devices",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 53,
+      "pdf_page": 59
+    },
+    {
+      "id": "11.1",
+      "control_id": "11",
+      "title": "Establish and Maintain a Data Recovery Process",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 55,
+      "pdf_page": 61
+    },
+    {
+      "id": "11.2",
+      "control_id": "11",
+      "title": "Perform Automated Backups",
+      "asset_type": "Data",
+      "security_function": "Recover",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 55,
+      "pdf_page": 61
+    },
+    {
+      "id": "11.3",
+      "control_id": "11",
+      "title": "Protect Recovery Data",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 55,
+      "pdf_page": 61
+    },
+    {
+      "id": "11.4",
+      "control_id": "11",
+      "title": "Establish and Maintain an Isolated Instance of Recovery Data",
+      "asset_type": "Data",
+      "security_function": "Recover",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 56,
+      "pdf_page": 62
+    },
+    {
+      "id": "11.5",
+      "control_id": "11",
+      "title": "Test Data Recovery",
+      "asset_type": "Data",
+      "security_function": "Recover",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 56,
+      "pdf_page": 62
+    },
+    {
+      "id": "12.1",
+      "control_id": "12",
+      "title": "Ensure Network Infrastructure is Up-to-Date",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 58,
+      "pdf_page": 64
+    },
+    {
+      "id": "12.2",
+      "control_id": "12",
+      "title": "Establish and Maintain a Secure Network Architecture",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 59,
+      "pdf_page": 65
+    },
+    {
+      "id": "12.3",
+      "control_id": "12",
+      "title": "Securely Manage Network Infrastructure",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 59,
+      "pdf_page": 65
+    },
+    {
+      "id": "12.4",
+      "control_id": "12",
+      "title": "Establish and Maintain Architecture Diagram(s)",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 59,
+      "pdf_page": 65
+    },
+    {
+      "id": "12.5",
+      "control_id": "12",
+      "title": "Centralize Network Authentication, Authorization, and Auditing (AAA)",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 59,
+      "pdf_page": 65
+    },
+    {
+      "id": "12.6",
+      "control_id": "12",
+      "title": "Use of Secure Network Management and Communication Protocols",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 59,
+      "pdf_page": 65
+    },
+    {
+      "id": "12.7",
+      "control_id": "12",
+      "title": "Ensure Remote Devices Utilize a VPN and are Connecting to an Enterprise’s AAA Infrastructure",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 60,
+      "pdf_page": 66
+    },
+    {
+      "id": "12.8",
+      "control_id": "12",
+      "title": "Establish and Maintain Dedicated Computing Resources for All Administrative Work",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 60,
+      "pdf_page": 66
+    },
+    {
+      "id": "13.1",
+      "control_id": "13",
+      "title": "Centralize Security Event Alerting",
+      "asset_type": "Network",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 62,
+      "pdf_page": 68
+    },
+    {
+      "id": "13.2",
+      "control_id": "13",
+      "title": "Deploy a Host-Based Intrusion Detection Solution",
+      "asset_type": "Devices",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 63,
+      "pdf_page": 69
+    },
+    {
+      "id": "13.3",
+      "control_id": "13",
+      "title": "Deploy a Network Intrusion Detection Solution",
+      "asset_type": "Network",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 63,
+      "pdf_page": 69
+    },
+    {
+      "id": "13.4",
+      "control_id": "13",
+      "title": "Perform Traffic Filtering Between Network Segments",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 63,
+      "pdf_page": 69
+    },
+    {
+      "id": "13.5",
+      "control_id": "13",
+      "title": "Manage Access Control for Remote Assets",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 63,
+      "pdf_page": 69
+    },
+    {
+      "id": "13.6",
+      "control_id": "13",
+      "title": "Collect Network Traffic Flow Logs",
+      "asset_type": "Network",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 63,
+      "pdf_page": 69
+    },
+    {
+      "id": "13.7",
+      "control_id": "13",
+      "title": "Deploy a Host-Based Intrusion Prevention Solution",
+      "asset_type": "Devices",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 64,
+      "pdf_page": 70
+    },
+    {
+      "id": "13.8",
+      "control_id": "13",
+      "title": "Deploy a Network Intrusion Prevention Solution",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 64,
+      "pdf_page": 70
+    },
+    {
+      "id": "13.9",
+      "control_id": "13",
+      "title": "Deploy Port-Level Access Control",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 64,
+      "pdf_page": 70
+    },
+    {
+      "id": "13.10",
+      "control_id": "13",
+      "title": "Perform Application Layer Filtering",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 64,
+      "pdf_page": 70
+    },
+    {
+      "id": "13.11",
+      "control_id": "13",
+      "title": "Tune Security Event Alerting Thresholds",
+      "asset_type": "Network",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 64,
+      "pdf_page": 70
+    },
+    {
+      "id": "14.1",
+      "control_id": "14",
+      "title": "Establish and Maintain a Security Awareness Program",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 67,
+      "pdf_page": 73
+    },
+    {
+      "id": "14.2",
+      "control_id": "14",
+      "title": "Train Workforce Members to Recognize Social Engineering Attacks",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 67,
+      "pdf_page": 73
+    },
+    {
+      "id": "14.3",
+      "control_id": "14",
+      "title": "Train Workforce Members on Authentication Best Practices",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 67,
+      "pdf_page": 73
+    },
+    {
+      "id": "14.4",
+      "control_id": "14",
+      "title": "Train Workforce on Data Handling Best Practices",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 67,
+      "pdf_page": 73
+    },
+    {
+      "id": "14.5",
+      "control_id": "14",
+      "title": "Train Workforce Members on Causes of Unintentional Data Exposure",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 68,
+      "pdf_page": 74
+    },
+    {
+      "id": "14.6",
+      "control_id": "14",
+      "title": "Train Workforce Members on Recognizing and Reporting Security Incidents",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 68,
+      "pdf_page": 74
+    },
+    {
+      "id": "14.7",
+      "control_id": "14",
+      "title": "Train Workforce on How to Identify and Report if Their Enterprise Assets are Missing Security Updates",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 68,
+      "pdf_page": 74
+    },
+    {
+      "id": "14.8",
+      "control_id": "14",
+      "title": "Train Workforce on the Dangers of Connecting to and Transmitting Enterprise Data Over Insecure Networks",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 68,
+      "pdf_page": 74
+    },
+    {
+      "id": "14.9",
+      "control_id": "14",
+      "title": "Conduct Role-Specific Security Awareness and Skills Training",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 69,
+      "pdf_page": 75
+    },
+    {
+      "id": "15.1",
+      "control_id": "15",
+      "title": "Establish and Maintain an Inventory of Service Providers",
+      "asset_type": "Users",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 72,
+      "pdf_page": 78
+    },
+    {
+      "id": "15.2",
+      "control_id": "15",
+      "title": "Establish and Maintain a Service Provider Management Policy",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 72,
+      "pdf_page": 78
+    },
+    {
+      "id": "15.3",
+      "control_id": "15",
+      "title": "Classify Service Providers",
+      "asset_type": "Users",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 72,
+      "pdf_page": 78
+    },
+    {
+      "id": "15.4",
+      "control_id": "15",
+      "title": "Ensure Service Provider Contracts Include Security Requirements",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 72,
+      "pdf_page": 78
+    },
+    {
+      "id": "15.5",
+      "control_id": "15",
+      "title": "Assess Service Providers",
+      "asset_type": "Users",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 73,
+      "pdf_page": 79
+    },
+    {
+      "id": "15.6",
+      "control_id": "15",
+      "title": "Monitor Service Providers",
+      "asset_type": "Data",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 73,
+      "pdf_page": 79
+    },
+    {
+      "id": "15.7",
+      "control_id": "15",
+      "title": "Securely Decommission Service Providers",
+      "asset_type": "Data",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 73,
+      "pdf_page": 79
+    },
+    {
+      "id": "16.1",
+      "control_id": "16",
+      "title": "Establish and Maintain a Secure Application Development Process",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 78,
+      "pdf_page": 84
+    },
+    {
+      "id": "16.2",
+      "control_id": "16",
+      "title": "Establish and Maintain a Process to Accept and Address Software Vulnerabilities",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 78,
+      "pdf_page": 84
+    },
+    {
+      "id": "16.3",
+      "control_id": "16",
+      "title": "Perform Root Cause Analysis on Security Vulnerabilities",
+      "asset_type": "Software",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 78,
+      "pdf_page": 84
+    },
+    {
+      "id": "16.4",
+      "control_id": "16",
+      "title": "Establish and Manage an Inventory of Third-Party Software Components",
+      "asset_type": "Software",
+      "security_function": "Identify",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 79,
+      "pdf_page": 85
+    },
+    {
+      "id": "16.5",
+      "control_id": "16",
+      "title": "Use Up-to-Date and Trusted Third-Party Software Components",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 79,
+      "pdf_page": 85
+    },
+    {
+      "id": "16.6",
+      "control_id": "16",
+      "title": "Establish and Maintain a Severity Rating System and Process for Application Vulnerabilities",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 79,
+      "pdf_page": 85
+    },
+    {
+      "id": "16.7",
+      "control_id": "16",
+      "title": "Use Standard Hardening Configuration Templates for Application Infrastructure",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 79,
+      "pdf_page": 85
+    },
+    {
+      "id": "16.8",
+      "control_id": "16",
+      "title": "Separate Production and Non-Production Systems",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 80,
+      "pdf_page": 86
+    },
+    {
+      "id": "16.9",
+      "control_id": "16",
+      "title": "Train Developers in Application Security Concepts and Secure Coding",
+      "asset_type": "Users",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 80,
+      "pdf_page": 86
+    },
+    {
+      "id": "16.10",
+      "control_id": "16",
+      "title": "Apply Secure Design Principles in Application Architectures",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 80,
+      "pdf_page": 86
+    },
+    {
+      "id": "16.11",
+      "control_id": "16",
+      "title": "Leverage Vetted Modules or Services for Application Security Components",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 80,
+      "pdf_page": 86
+    },
+    {
+      "id": "16.12",
+      "control_id": "16",
+      "title": "Implement Code-Level Security Checks",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 81,
+      "pdf_page": 87
+    },
+    {
+      "id": "16.13",
+      "control_id": "16",
+      "title": "Conduct Application Penetration Testing",
+      "asset_type": "Software",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 81,
+      "pdf_page": 87
+    },
+    {
+      "id": "16.14",
+      "control_id": "16",
+      "title": "Conduct Threat Modeling",
+      "asset_type": "Software",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 81,
+      "pdf_page": 87
+    },
+    {
+      "id": "17.1",
+      "control_id": "17",
+      "title": "Designate Personnel to Manage Incident Handling",
+      "asset_type": "Users",
+      "security_function": "Respond",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 83,
+      "pdf_page": 89
+    },
+    {
+      "id": "17.2",
+      "control_id": "17",
+      "title": "Establish and Maintain Contact Information for Reporting Security Incidents",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 84,
+      "pdf_page": 90
+    },
+    {
+      "id": "17.3",
+      "control_id": "17",
+      "title": "Establish and Maintain an Enterprise Process for Reporting Incidents",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG1",
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 84,
+      "pdf_page": 90
+    },
+    {
+      "id": "17.4",
+      "control_id": "17",
+      "title": "Establish and Maintain an Incident Response Process",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 84,
+      "pdf_page": 90
+    },
+    {
+      "id": "17.5",
+      "control_id": "17",
+      "title": "Assign Key Roles and Responsibilities",
+      "asset_type": "Users",
+      "security_function": "Respond",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 84,
+      "pdf_page": 90
+    },
+    {
+      "id": "17.6",
+      "control_id": "17",
+      "title": "Define Mechanisms for Communicating During Incident Response",
+      "asset_type": "Users",
+      "security_function": "Respond",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 85,
+      "pdf_page": 91
+    },
+    {
+      "id": "17.7",
+      "control_id": "17",
+      "title": "Conduct Routine Incident Response Exercises",
+      "asset_type": "Users",
+      "security_function": "Recover",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 85,
+      "pdf_page": 91
+    },
+    {
+      "id": "17.8",
+      "control_id": "17",
+      "title": "Conduct Post-Incident Reviews",
+      "asset_type": "Users",
+      "security_function": "Recover",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 85,
+      "pdf_page": 91
+    },
+    {
+      "id": "17.9",
+      "control_id": "17",
+      "title": "Establish and Maintain Security Incident Thresholds",
+      "asset_type": "Documentation",
+      "security_function": "Recover",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 85,
+      "pdf_page": 91
+    },
+    {
+      "id": "18.1",
+      "control_id": "18",
+      "title": "Establish and Maintain a Penetration Testing Program",
+      "asset_type": "Documentation",
+      "security_function": "Govern",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 88,
+      "pdf_page": 94
+    },
+    {
+      "id": "18.2",
+      "control_id": "18",
+      "title": "Perform Periodic External Penetration Tests",
+      "asset_type": "Network",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 89,
+      "pdf_page": 95
+    },
+    {
+      "id": "18.3",
+      "control_id": "18",
+      "title": "Remediate Penetration Test Findings",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG2",
+        "IG3"
+      ],
+      "source_page": 89,
+      "pdf_page": 95
+    },
+    {
+      "id": "18.4",
+      "control_id": "18",
+      "title": "Validate Security Measures",
+      "asset_type": "Network",
+      "security_function": "Protect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 89,
+      "pdf_page": 95
+    },
+    {
+      "id": "18.5",
+      "control_id": "18",
+      "title": "Perform Periodic Internal Penetration Tests",
+      "asset_type": "Network",
+      "security_function": "Detect",
+      "implementation_groups": [
+        "IG3"
+      ],
+      "source_page": 89,
+      "pdf_page": 95
+    }
+  ]
+}

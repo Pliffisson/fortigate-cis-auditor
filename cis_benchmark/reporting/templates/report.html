@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FortiGate CIS Benchmark Audit Report</title>
+<style>
+{{ report_css | safe }}
+</style>
+</head>
+<body>
+{% if report.parse_warnings %}<div class="parser-warning"><strong>Comandos não interpretados; exporte show full-configuration.</strong><ul>{% for warning in report.parse_warnings %}<li>{{ warning }}</li>{% endfor %}</ul></div>{% endif %}
+<div class="container">
+    <!-- Header -->
+    <div class="report-header">
+        <h1>&#128737; FortiGate CIS Benchmark Audit Report</h1>
+        <div class="subtitle">{{ report.benchmark }} — avaliação offline</div>
+        <div class="meta">
+            Generated: {{ timestamp }} &nbsp;|&nbsp; Config: {{ config_file or 'N/A' }} &nbsp;|&nbsp;
+            Total Controls: {{ report.total_rules }}
+        </div>
+    </div>
+
+    <!-- Executive Summary - Score Cards -->
+    <div class="score-grid">
+        <div class="score-card">
+            <div class="score-label">Partial Offline Compliance</div>
+            <div class="score-value" style="color:{{ gauge_color }}">{{ report.overall_percentage }}%</div>
+            <div class="score-detail">{{ report.passed_rules }}/{{ report.evaluated_rules }} evaluated controls passed</div>
+            <div class="score-detail">Coverage: {{ report.coverage_percentage }}%; Manual review: {{ report.manual_review_rules }}; N/A: {{ report.not_applicable_rules }}; Errors: {{ report.error_rules }}</div>
+            <div class="risk-indicator" style="background:rgba(0,0,0,0.3);color:{{ report.risk_color }}">
+                &#9888; Risk: {{ report.risk_rating }}
+            </div>
+        </div>
+        <div class="score-card">
+            <div class="score-label">Level 1 (Basic)</div>
+            <div class="score-value" style="color:{{ l1_color }}">{{ report.level1_percentage }}%</div>
+            <div class="score-detail">{{ report.level1_passed }}/{{ report.level1_evaluated }} evaluated controls passed</div>
+        </div>
+        <div class="score-card">
+            <div class="score-label">Level 2 (Advanced)</div>
+            <div class="score-value" style="color:{{ l2_color }}">{{ report.level2_percentage }}%</div>
+            <div class="score-detail">{{ report.level2_passed }}/{{ report.level2_evaluated }} evaluated controls passed</div>
+        </div>
+        <div class="score-card">
+            <div class="score-label">Weighted Score</div>
+            <div class="score-value" style="color:{{ gauge_color }}">{{ report.weighted_score }}%</div>
+            <div class="score-detail">Severity-weighted calculation</div>
+        </div>
+    </div>
+
+    <!-- Severity Breakdown -->
+    <div class="section">
+        <div class="section-title">&#9888;&#65039; Severity Breakdown</div>
+        <div class="severity-grid">
+            <div class="severity-item" style="border-color:#ef4444">
+                <div style="font-size:24px;font-weight:700;color:#f87171">{{ report.critical_total - report.critical_passed }}</div>
+                <div style="font-size:12px;color:var(--text-secondary)">Critical Failures</div>
+                <div style="font-size:11px;color:var(--text-muted)">{{ report.critical_passed }}/{{ report.critical_total }} passed</div>
+            </div>
+            <div class="severity-item" style="border-color:#f59e0b">
+                <div style="font-size:24px;font-weight:700;color:#fbbf24">{{ report.high_total - report.high_passed }}</div>
+                <div style="font-size:12px;color:var(--text-secondary)">High Failures</div>
+                <div style="font-size:11px;color:var(--text-muted)">{{ report.high_passed }}/{{ report.high_total }} passed</div>
+            </div>
+            <div class="severity-item" style="border-color:#3b82f6">
+                <div style="font-size:24px;font-weight:700;color:#60a5fa">{{ report.medium_total - report.medium_passed }}</div>
+                <div style="font-size:12px;color:var(--text-secondary)">Medium Failures</div>
+                <div style="font-size:11px;color:var(--text-muted)">{{ report.medium_passed }}/{{ report.medium_total }} passed</div>
+            </div>
+            <div class="severity-item" style="border-color:#10b981">
+                <div style="font-size:24px;font-weight:700;color:#34d399">{{ report.low_total - report.low_passed }}</div>
+                <div style="font-size:12px;color:var(--text-secondary)">Low Failures</div>
+                <div style="font-size:11px;color:var(--text-muted)">{{ report.low_passed }}/{{ report.low_total }} passed</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Risk Heatmap by Category -->
+    <div class="section">
+        <div class="section-title">&#128200; Compliance by Category</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Total</th>
+                    <th>Passed</th>
+                    <th>Failed</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>{% include 'category_rows.html' %}</tbody>
+        </table>
+    </div>
+
+    <!-- Failed Controls -->
+    <div class="section">
+        <div class="section-title">&#10060; Failed Controls ({{ report.failed_rules }})</div>
+        {% if report.failed_rules == 0 %}<p style='font-size:14px;'>No confirmed failures. Review coverage and pending controls.</p>{% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Rule ID</th>
+                    <th>Control</th>
+                    <th>Level</th>
+                    <th>Severity</th>
+                    <th>Actual Value</th>
+                    <th>Expected Value</th>
+                    <th>Remediation</th>
+                </tr>
+            </thead>
+            <tbody>{% include 'failed_rows.html' %}</tbody>
+        </table>{% endif %}
+    </div>
+
+    <!-- All Controls -->
+    <div class="section">
+        <div class="section-title">&#128203; All Controls ({{ report.total_rules }})</div>
+        <div class="controls-bar">
+            <input type="text" class="search-input" placeholder="Search rules..." oninput="filterTable(this.value)" id="searchInput">
+            <button class="filter-btn active" onclick="filterStatus('all', this)">All</button>
+            <button class="filter-btn" onclick="filterStatus('PASS', this)">Pass</button>
+            <button class="filter-btn" onclick="filterStatus('FAIL', this)">Fail</button>
+            <button class="filter-btn" onclick="filterStatus('MANUAL_REVIEW', this)">Manual review</button>
+            <button class="filter-btn" onclick="filterStatus('NOT_APPLICABLE', this)">N/A</button>
+            <button class="filter-btn" onclick="filterStatus('ERROR', this)">Error</button>
+            <button class="filter-btn" onclick="filterSeverity('Critical', this)">Critical</button>
+            <button class="filter-btn" onclick="filterSeverity('High', this)">High</button>
+            <button class="filter-btn" onclick="filterSeverity('Medium', this)">Medium</button>
+            <button class="filter-btn" onclick="filterSeverity('Low', this)">Low</button>
+        </div>
+        <table id="allControlsTable">
+            <thead>
+                <tr>
+                    <th>Rule ID</th>
+                    <th>Control</th>
+                    <th>Level</th>
+                    <th>Severity</th>
+                    <th>Status</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>{% include 'control_rows.html' %}</tbody>
+        </table>
+    </div>
+
+    {% with alignment=report.controls_alignment, alignment_open=true %}{% include 'controls_alignment.html' %}{% endwith %}
+    <div class="report-footer">
+        {{ report.benchmark }} &bull; Offline assessment, not CIS certification or CIS-CAT. Severity weights are project-defined. &bull; Generated {{ timestamp }}
+        <br>Source: {{ report.source_document }} &bull; SHA-256: {{ report.source_sha256 }}
+    </div>
+</div>
+
+<script>{{ report_js | safe }}</script>
+</body>
+</html>

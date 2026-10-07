@@ -1,0 +1,38 @@
+{% if alignment %}
+<section id="controls-alignment" class="section controls-alignment" data-controls-alignment>
+    <h3>Alinhamento ao CIS Controls v{{ alignment.version }}</h3>
+    <p class="alignment-intro">Evidências de configuração do FortiGate relacionadas às salvaguardas organizacionais. IG1/IG2/IG3 são independentes de Level 1/Level 2 e não alteram a pontuação técnica.</p>
+    <p class="alignment-caution">Relacionamentos propostos pelo projeto, sujeitos a revisão; não constituem mapeamento oficial CIS. Uma aprovação técnica não comprova o atendimento da salvaguarda na organização.</p>
+    <div class="alignment-groups">
+    {% for group, summary in alignment.groups.items() %}
+        <div><strong>{{ group }}</strong><span>{{ summary.total_safeguards }} salvaguardas no grupo</span><span>{{ summary.mapped_safeguards }} relacionadas · {{ summary.safeguards_with_technical_evidence }} com evidência técnica</span><span>{{ summary.pending_review }} pendentes de revisão · {{ summary.not_evaluated }} não avaliadas pelo projeto</span></div>
+    {% endfor %}
+    </div>
+    <details class="alignment-details" {% if alignment_open | default(false) %}open{% endif %}>
+        <summary>Explorar salvaguardas e evidências necessárias</summary>
+        <div class="alignment-toolbar">
+            <label>Grupo de implementação<select data-ig-filter><option value="">Todos os grupos</option><option value="IG1">IG1 — Higiene essencial</option><option value="IG2">IG2 — Inclui IG1</option><option value="IG3">IG3 — Inclui IG1 e IG2</option></select></label>
+            <label>Buscar salvaguarda<input type="search" data-safeguard-search placeholder="ID ou nome da salvaguarda"></label>
+            <label class="alignment-checkbox"><input type="checkbox" data-show-unmapped> Incluir não avaliadas pelo projeto</label>
+        </div>
+        <p data-alignment-count role="status">{{ alignment.safeguards | selectattr('mapped') | list | length }} salvaguardas relacionadas; catálogo com {{ alignment.safeguards | length }} salvaguardas.</p>
+        <div class="alignment-list">
+        {% for safeguard in alignment.safeguards %}
+            <article class="safeguard-card" data-safeguard data-groups="{{ safeguard.implementation_groups | join(' ') }}" data-mapped="{{ 'true' if safeguard.mapped else 'false' }}" data-search="{{ safeguard.id }} {{ safeguard.title }}" {% if not safeguard.mapped %}hidden{% endif %}>
+                <h4><span>CIS Controls {{ safeguard.id }}</span> {{ safeguard.title }}</h4>
+                <p class="safeguard-meta">{{ safeguard.implementation_groups | join(' · ') }} · {{ safeguard.asset_type }} · {{ safeguard.security_function }} · Guia p. {{ safeguard.source_page }} (PDF {{ safeguard.pdf_page }})</p>
+                {% if safeguard.mapped %}
+                    <p class="safeguard-pending"><strong>Revisão organizacional pendente</strong></p>
+                    <p>{{ safeguard.rationale }}</p>
+                    <p><strong>Testes FortiGate relacionados:</strong> {% for ref in safeguard.benchmark_references %}{{ ref.benchmark_rule_id }} — {{ {'PASS':'Aprovado', 'FAIL':'Falha', 'MANUAL_REVIEW':'Revisão manual', 'NOT_APPLICABLE':'Não aplicável ao teste', 'ERROR':'Erro', 'NOT_SELECTED':'Não selecionado nesta avaliação'}.get(ref.status, ref.status) }}{% if not loop.last %}; {% endif %}{% endfor %}.</p>
+                    <p><strong>Evidência técnica:</strong> {{ safeguard.technical_passed }} testes aprovados · {{ safeguard.technical_failed }} falhas. {% if safeguard.evaluation_status == 'NOT_EVALUATED' %}Sem conclusão técnica PASS/FAIL nesta avaliação.{% endif %}</p>
+                {% else %}<p><strong>Não avaliada pelo projeto.</strong> Não equivale a “não aplicável” à organização.</p>{% endif %}
+                <p class="safeguard-evidence"><strong>Evidência adicional necessária:</strong> {{ safeguard.additional_evidence }}</p>
+            </article>
+        {% endfor %}
+        </div>
+        <p data-alignment-empty hidden>Nenhuma salvaguarda corresponde aos filtros.</p>
+    </details>
+    <p class="alignment-source">Fonte: {{ alignment.source_document }} · SHA-256: <span>{{ alignment.source_sha256 }}</span><br>Conteúdo de referência atribuído ao <a href="{{ alignment.source_url }}" target="_blank" rel="noopener noreferrer">Center for Internet Security</a> · <a href="{{ alignment.license_url }}" target="_blank" rel="noopener noreferrer">Licença da fonte</a>.</p>
+</section>
+{% endif %}

@@ -1,0 +1,25 @@
+{% macro compliance_value(percentage, evaluated) -%}
+    {% if not evaluated %}
+        {% set color, rating = 'score-neutral', 'Sem controles avaliados' %}
+    {% elif percentage >= 80 %}
+        {% set color, rating = 'green', 'Alta conformidade' %}
+    {% elif percentage >= 60 %}
+        {% set color, rating = 'yellow', 'Conformidade moderada' %}
+    {% elif percentage >= 40 %}
+        {% set color, rating = 'orange', 'Baixa conformidade' %}
+    {% else %}
+        {% set color, rating = 'red', 'Conformidade muito baixa' %}
+    {% endif %}
+    <div class="value {{ color }}">{{ percentage }}%</div>
+    <div class="detail {{ color }}">{{ rating }}</div>
+{%- endmacro %}
+
+{% macro coverage_status(report) -%}
+    {% if report.total_rules == report.not_applicable_rules %}
+        Sem controles aplicáveis
+    {% elif report.evaluated_rules < report.total_rules - report.not_applicable_rules %}
+        Avaliação parcial
+    {% else %}
+        Controles aplicáveis avaliados
+    {% endif %}
+{%- endmacro %}

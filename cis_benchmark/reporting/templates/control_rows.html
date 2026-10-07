@@ -1,0 +1,9 @@
+{% for r in report.results %}
+<tr class="status-{{ r.status.lower() }}" data-severity="{{ r.severity.value }}" data-level="{{ r.level.value }}" data-category="{{ r.category }}" data-status="{{ r.status }}">
+    <td><span class="rule-id">{{ r.rule_id }}</span></td><td>{{ r.title }}{% if r.controls_safeguards %}<br><small>CIS Controls v8.1.2 (relações propostas): {% for safeguard in r.controls_safeguards %}{{ safeguard.safeguard_id }}{% if not loop.last %}, {% endif %}{% endfor %}</small>{% endif %}</td>
+    <td><span class="badge badge-level">L{{ r.level.value }}</span></td>
+    <td><span class="badge badge-{{ r.severity.value.lower() }}">{{ r.severity.value }}</span></td>
+    <td><span class="status-badge status-{{ r.status.lower() }}">{{ r.status }}</span></td>
+    <td class="actual-value">{{ r.actual_value }}<br><small>{{ r.assessment }}; {{ r.references | join('; ') }}</small></td>
+</tr>
+{% endfor %}

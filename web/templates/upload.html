@@ -1,0 +1,49 @@
+<section class="hero initial-hero">
+    <h2>Auditoria de configuração FortiGate</h2>
+    <p>Avaliação offline baseada no CIS FortiGate 7.4.x. Envie sua configuração para identificar falhas e controles que exigem revisão.</p>
+</section>
+
+<section class="upload initial-upload" aria-label="Enviar configuração">
+    <form action="{{ url_for('upload_config') }}" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="csrf_token" value="{{ session.get('csrf_token', '') }}">
+        <div class="drop">
+            <input type="file" name="config_file" accept=".conf" required id="config-file" aria-label="Selecionar arquivo de configuração .conf" aria-describedby="file-help" data-max-bytes="{{ config.MAX_CONTENT_LENGTH }}">
+            <div><div class="drop-icon" aria-hidden="true">📄</div><strong id="fileName">Arraste seu arquivo .conf</strong><span>ou clique para selecionar a configuração</span></div>
+        </div>
+        <p id="file-help" class="file-help">Formato .conf · Texto UTF-8 ou Unicode, sem criptografia · Limite do envio: {{ config.MAX_CONTENT_LENGTH // (1024 * 1024) }} MB</p>
+        <div class="selected-file" id="selected-file" hidden>
+            <div><strong id="selected-file-name"></strong><span id="selected-file-size"></span></div>
+            <button type="button" class="secondary-button" id="replace-file">Trocar arquivo</button>
+        </div>
+        <p class="file-error" id="file-error" role="alert" hidden></p>
+        <details class="advanced-options"><summary>Opções avançadas <span>CIS completo por padrão</span></summary>
+            <div class="advanced-fields">
+                <div class="timezone-field"><label for="expected-timezone">Timezone esperado do FortiGate (opcional)</label>
+                    <input id="expected-timezone" name="expected_timezone" placeholder="ID do FortiOS" aria-describedby="timezone-help">
+                    <small id="timezone-help">Deixe em branco para revisão manual. Este campo não altera o horário da aplicação.</small>
+                </div>
+                <div class="level-field"><label for="audit-level">Controles a avaliar</label><select id="audit-level" name="level">
+                    <option value="all">CIS completo — Níveis 1 e 2</option><option value="1">Somente Nível 1</option><option value="2">Somente Nível 2</option>
+                </select></div>
+            </div>
+        </details>
+        <div class="upload-submit"><p class="privacy-compact">🔒 Processamento em memória · Sem armazenamento permanente do arquivo<br><span>O resultado fica nesta sessão do navegador e expira automaticamente.</span></p>
+            <button class="analyze" type="submit">🔍 ANALISAR CONFIGURAÇÃO</button>
+        </div>
+    </form>
+</section>
+
+<details class="export-guide cli-details">
+    <summary>Como exportar a configuração <span>Instruções e comandos do FortiGate</span></summary>
+    <div class="export-guide-body">
+        <p>Para obter a melhor cobertura, gere a configuração completa pelo CLI do FortiGate:</p>
+        <pre class="export-cli"><code>get system status
+config system console
+    set output standard
+end
+show full-configuration</code></pre>
+        <button type="button" class="secondary-button copy-cli">Copiar comandos</button><span class="copy-status" role="status"></span>
+        <p>Salve <strong>toda a saída</strong> em um arquivo <strong>.conf</strong>. Inclua a linha <strong>Version:</strong> de <code>get system status</code> antes da configuração para identificar o FortiOS. Use texto UTF-8 ou Unicode, sem criptografia.</p>
+        <p class="export-guide-note">Não interrompa, filtre ou omita partes da saída. A configuração completa permite avaliar os controles aplicáveis.</p>
+    </div>
+</details>

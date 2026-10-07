@@ -1,0 +1,7 @@
+{% for name, cs in report.category_scores.items() %}
+<tr>
+    <td>{{ name }}</td><td>{{ cs.total }}</td><td>{{ cs.passed }}</td><td>{{ cs.failed }}</td>
+    <td><div class="progress-bar"><div class="progress-fill" style="width:{{ cs.percentage }}%;background:{{ pct_color(cs.percentage) }}"></div></div>
+    <span class="pct-label">{{ cs.percentage }}%</span></td>
+</tr>
+{% endfor %}

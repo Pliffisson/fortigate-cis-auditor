@@ -1,0 +1,11 @@
+{% macro status_badge(status) -%}
+    {% set labels = {
+        'PASS': ('Aprovado', '✓'),
+        'FAIL': ('Falha', '✕'),
+        'MANUAL_REVIEW': ('Revisão manual', '◷'),
+        'NOT_APPLICABLE': ('Não aplicável', '—'),
+        'ERROR': ('Erro', '!')
+    } %}
+    {% set label, icon = labels.get(status, (status, '•')) %}
+    <span class="status-pill status-{{ status | lower }}"><span aria-hidden="true">{{ icon }}</span> {{ label }}</span>
+{%- endmacro %}
