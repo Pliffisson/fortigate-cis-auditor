@@ -1,12 +1,12 @@
 # FortiGate CIS Auditor
 
-[![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![Docker Compose](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
-[![Flask 3.1.3](https://img.shields.io/badge/Flask-3.1.3-3B4937?style=flat-square&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-![FortiOS 7.4.x](https://img.shields.io/badge/FortiOS-7.4.x-E44B35?style=flat-square)
-[![Referência CIS Controls 8.1.2](https://img.shields.io/badge/CIS_Controls-8.1.2-83C75A?style=flat-square)](docs/cis_controls_implementation.md)
-![Avaliação offline](https://img.shields.io/badge/Avalia%C3%A7%C3%A3o-offline-475742?style=flat-square&logo=shield&logoColor=white)
-![Exportação HTML, JSON e PDF](https://img.shields.io/badge/Relat%C3%B3rios-HTML_%7C_JSON_%7C_PDF-B8E986?style=flat-square)
+[![Python 3.12](docs/badges/python.svg)](https://www.python.org/)
+[![Docker Compose](docs/badges/docker.svg)](https://docs.docker.com/compose/)
+[![Flask 3.1.3](docs/badges/flask.svg)](https://flask.palletsprojects.com/)
+![FortiOS 7.4.x](docs/badges/fortios.svg)
+[![Referência CIS Controls 8.1.2](docs/badges/cis-controls.svg)](docs/cis_controls_implementation.md)
+![Avaliação offline](docs/badges/offline.svg)
+![Exportação HTML, JSON e PDF](docs/badges/reports.svg)
 
 Auditoria offline de exportações FortiOS **7.4.x**, baseada no PDF CIS FortiGate 7.4.x v1.0.1 fornecido neste projeto. Interface web, API e CLI usam o mesmo motor e geram relatórios HTML, JSON e PDF.
 

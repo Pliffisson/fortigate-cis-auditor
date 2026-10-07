@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="143" height="26" viewBox="0 0 143 26" role="img" aria-label="Docker Compose">
+<title>Docker Compose</title>
+<defs><clipPath id="rounded"><rect width="143" height="26" rx="5"/></clipPath></defs>
+<g clip-path="url(#rounded)"><rect width="78" height="26" fill="#28332b"/><rect x="78" width="65" height="26" fill="#2496ED"/></g>
+<g font-family="DejaVu Sans,Arial,sans-serif" font-size="11" text-anchor="middle">
+<circle cx="14" cy="13" r="9" fill="#142012"/><text x="14" y="16" fill="#b8e986" font-size="8" font-weight="bold">D</text>
+<text x="52.0" y="17" fill="#eef4ed">Docker</text>
+<text x="110.5" y="17" fill="#102012" font-weight="bold">Compose</text></g>
+</svg>

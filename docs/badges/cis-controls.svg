@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="171" height="26" viewBox="0 0 171 26" role="img" aria-label="CIS Controls 8.1.2">
+<title>CIS Controls 8.1.2</title>
+<defs><clipPath id="rounded"><rect width="171" height="26" rx="5"/></clipPath></defs>
+<g clip-path="url(#rounded)"><rect width="120" height="26" fill="#28332b"/><rect x="120" width="51" height="26" fill="#83C75A"/></g>
+<g font-family="DejaVu Sans,Arial,sans-serif" font-size="11" text-anchor="middle">
+<circle cx="14" cy="13" r="9" fill="#142012"/><text x="14" y="16" fill="#b8e986" font-size="8" font-weight="bold">C</text>
+<text x="73.0" y="17" fill="#eef4ed">CIS Controls</text>
+<text x="145.5" y="17" fill="#142012" font-weight="bold">8.1.2</text></g>
+</svg>

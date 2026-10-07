@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="241" height="26" viewBox="0 0 241 26" role="img" aria-label="Relatórios HTML | JSON | PDF">
+<title>Relatórios HTML | JSON | PDF</title>
+<defs><clipPath id="rounded"><rect width="241" height="26" rx="5"/></clipPath></defs>
+<g clip-path="url(#rounded)"><rect width="106" height="26" fill="#28332b"/><rect x="106" width="135" height="26" fill="#B8E986"/></g>
+<g font-family="DejaVu Sans,Arial,sans-serif" font-size="11" text-anchor="middle">
+<circle cx="14" cy="13" r="9" fill="#142012"/><text x="14" y="16" fill="#b8e986" font-size="8" font-weight="bold">R</text>
+<text x="66.0" y="17" fill="#eef4ed">Relatórios</text>
+<text x="173.5" y="17" fill="#142012" font-weight="bold">HTML | JSON | PDF</text></g>
+</svg>
