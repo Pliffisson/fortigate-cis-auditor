@@ -64,9 +64,9 @@ docker compose up -d --build --wait
 docker compose logs -f auditor
 ```
 
-O acesso é feito pelo Traefik existente em **https://auditoria-fortinet.enw.internal**. Configure `AUDITOR_DOMAIN` e `TRAEFIK_NETWORK` no `.env`; a rede externa padrão é `proxy`. O auditor usa apenas a porta interna `8000`, sem publicar uma porta na VM. Mantenha `SESSION_COOKIE_SECURE=true` para HTTPS.
+Para publicar a interface por um proxy HTTPS, configure `AUDITOR_DOMAIN` e `TRAEFIK_NETWORK` no `.env` conforme o seu ambiente. A rede externa padrão é `proxy`. O auditor usa apenas a porta interna `8000`, sem publicar uma porta no host. Mantenha `SESSION_COOKIE_SECURE=true` para HTTPS.
 
-O Traefik precisa do provider Docker, entrypoint `websecure`, certificado para o domínio e dos middlewares existentes `secure-headers@file` e `compress@file`. O certificado interno atual cobre `*.enw.internal`; os computadores clientes precisam confiar na autoridade que o emitiu. Cadastre no DNS interno o registro A `auditoria-fortinet.enw.internal` apontando para `192.168.101.160`. O redirecionamento HTTP para HTTPS já é configurado pelo Traefik da VM.
+O Traefik precisa do provider Docker, entrypoint `websecure`, certificado válido para o domínio escolhido e dos middlewares `secure-headers@file` e `compress@file` configurados no ambiente. Crie o registro DNS apontando para o endereço do proxy e garanta que os clientes confiem na autoridade certificadora utilizada. Configure o redirecionamento HTTP para HTTPS no proxy.
 
 Envie um backup `.conf`, preferencialmente obtido com `show full-configuration` e mantendo seu cabeçalho. Escolha Level 1, Level 2 ou ambos. O timezone esperado é opcional e deve ser o ID utilizado pelo FortiOS.
 
